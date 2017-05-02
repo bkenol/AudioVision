@@ -21,13 +21,13 @@ function setup() {
    canvas = createCanvas(1000, 1000);
    ID = createGraphics(1000,1000);
    
-  songPlaying = song;
+  songPlaying = song; // sets the song that is going to play
    background(100, 200, 200);
    pixelDensity(1);
    drawGrid();
    noFill();
   
-  volumeSlider = createSlider(0.0, 1.0, 0.8);
+  volumeSlider = createSlider(0.0, 1.0, 0.8); // slider for the volume is bugged with decimal values
    
    buttonSize = 60;
    
@@ -39,14 +39,14 @@ function setup() {
    //fft2.setInput(song2);
   print(duration);
   
-  songPlaying.jump(songPlaying.duration()/4);
+  songPlaying.jump(songPlaying.duration()/4); // starts a quarter ways into the song
   push();
-  createTag();
+  createTag(); // creates the song ID Tag
   
   //translate(0, -250);
   pop();
   
-  displayControls();
+  displayControls(); // shows controls
 }
 
 
@@ -54,7 +54,7 @@ function draw() {
   
   print(mouseX);
   print(mouseY);
-  songPlaying.setVolume(volumeSlider.value());
+  songPlaying.setVolume(volumeSlider.value()); // sets the volume to the slider value
   volumeSlider.position(width/4, height - 80);
   
   push();
